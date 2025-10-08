@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--------TITRE -------------------------->
+        <title>CONTACT - JULES FERRY CAR</title>
+        <!------LINK CSS-------------------------->
+        <link rel="stylesheet" href="./style.css">
+        <!-------------------FONT AWSOME CDN ---------------------------------------->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-------------------BOOTSTRAP 4 CSS------------------------------------------------>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!----------Viewport controle de mise en page sur navigateur mobile --------->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!----CDN Javascript JQUERY--------------------------------------------------->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <!--------------------------BOOTSTRAP JAVASCRIPT ------------------->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <!---CDN Javascript poppser -------------------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!---nav de bootstrap/navbar-dark/------------------------------------------------------------------------------->
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="fas fa-bars fa-lg"></span>
+                </button>
+                
+                <a class="navbar-brand" href="./main.html"><span class="fas fa-trophy fa-lg"></span></a>
+                
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="./informations.html"><span class="fa fa-info fa-lg"></span> Informations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./catalogue.html"><span class="fas fa-car fa-lg"></span> Catalogue</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="./contact.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                    </ul>
+                    <span class="navbar-text">
+                        <button type="button" class="btn btn btn-success" data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login</button>
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenu principal de contact -->
+        <div class="container" style="margin-top: 80px;">
+            
+            <!-- En-tête de la page contact -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4" style="color: #013e80; margin-bottom: 30px;">
+                        <i class="fas fa-address-card"></i> Contactez-nous
+                    </h1>
+                    <p class="lead" style="color: #013e80;">Nous sommes là pour répondre à toutes vos questions</p>
+                </div>
+            </div>
+
+            <div class="row row-content">
+                <!-- Formulaire de contact -->
+                <div class="col-12 col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #013e80; color: white;">
+                            <h4><i class="fas fa-envelope"></i> Envoyez-nous un message</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="firstName">Prénom</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="Votre prénom" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="lastName">Nom</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Votre nom" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="votre.email@exemple.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Téléphone</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+33 1 23 45 67 89">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Sujet</label>
+                                    <select class="form-control" id="subject" required>
+                                        <option value="">Choisissez un sujet</option>
+                                        <option value="info">Demande d'informations</option>
+                                        <option value="devis">Demande de devis</option>
+                                        <option value="sav">Service après-vente</option>
+                                        <option value="rdv">Prise de rendez-vous</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="Décrivez votre demande..." required></textarea>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="consent" required>
+                                    <label class="form-check-label" for="consent">
+                                        J'accepte que mes données soient traitées pour répondre à ma demande
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg mt-3">
+                                    <i class="fas fa-paper-plane"></i> Envoyer le message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations de contact -->
+                <div class="col-12 col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-header" style="background-color: #013e80; color: white;">
+                            <h5><i class="fas fa-map-marker-alt"></i> Nos coordonnées</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-info">
+                                <p><strong><i class="fas fa-building"></i> Adresse :</strong><br>
+                                29 rue du Maréchal Joffre<br>
+                                78000 Versailles, France</p>
+                                
+                                <p><strong><i class="fas fa-phone"></i> Téléphone :</strong><br>
+                                +33 1 23 45 67 89</p>
+                                
+                                <p><strong><i class="fas fa-envelope"></i> Email :</strong><br>
+                                contact@julesferrycar.fr</p>
+                                
+                                <p><strong><i class="fas fa-clock"></i> Horaires :</strong><br>
+                                Lun-Ven: 9h00 - 18h00<br>
+                                Sam: 9h00 - 12h00<br>
+                                Dim: Fermé</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Réseaux sociaux -->
+                    <div class="card">
+                        <div class="card-header" style="background-color: #013e80; color: white;">
+                            <h5><i class="fas fa-share-alt"></i> Suivez-nous</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="social-buttons">
+                                <a href="#" class="btn btn-outline-primary btn-lg m-2" style="border-color: #013e80; color: #013e80;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-lg m-2" style="border-color: #013e80; color: #013e80;">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-lg m-2" style="border-color: #013e80; color: #013e80;">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-lg m-2" style="border-color: #013e80; color: #013e80;">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map section -->
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #013e80; color: white;">
+                            <h4><i class="fas fa-map"></i> Comment nous trouver</h4>
+                        </div>
+                        <div class="card-body">
+                            <div style="background-color: #f8f9fa; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                <div class="text-center" style="color: #013e80;">
+                                    <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                                    <h5>Plan interactif</h5>
+                                    <p>Carte Google Maps à intégrer ici</p>
+                                    <small>29 rue du Maréchal Joffre, 78000 Versailles</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Login/Inscription -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <ul class="nav nav-tabs" id="loginTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Se connecter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Créer un compte</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="tab-content" id="loginTabContent">
+                            <!-- Onglet Connexion -->
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="loginEmail">Email</label>
+                                        <input type="email" class="form-control" id="loginEmail" placeholder="Entrez votre email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Mot de passe</label>
+                                        <input type="password" class="form-control" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Onglet Inscription -->
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="registerName">Nom complet</label>
+                                        <input type="text" class="form-control" id="registerName" placeholder="Entrez votre nom complet" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerEmail">Email</label>
+                                        <input type="email" class="form-control" id="registerEmail" placeholder="Entrez votre email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerPassword">Mot de passe</label>
+                                        <input type="password" class="form-control" id="registerPassword" placeholder="Créez un mot de passe" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmPassword">Confirmer le mot de passe</label>
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                                        <label class="form-check-label" for="agreeTerms">J'accepte les conditions d'utilisation</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="tab-content w-100">
+                            <div class="tab-pane fade show active" id="loginFooter" role="tabpanel">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-primary" id="loginBtn">Se connecter</button>
+                            </div>
+                            <div class="tab-pane fade" id="registerFooter" role="tabpanel">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-success" id="registerBtn">Créer le compte</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Script pour gérer les onglets et les fonctionnalités de la modal
+            $(document).ready(function() {
+                // Synchroniser les pieds de modal avec les onglets
+                $('#loginTab a').on('shown.bs.tab', function (e) {
+                    var target = $(e.target).attr("href");
+                    if (target === '#login') {
+                        $('#loginFooter').addClass('show active');
+                        $('#registerFooter').removeClass('show active');
+                    } else if (target === '#register') {
+                        $('#registerFooter').addClass('show active');
+                        $('#loginFooter').removeClass('show active');
+                    }
+                });
+
+                // Gestion de la connexion
+                $('#loginBtn').click(function(e) {
+                    e.preventDefault();
+                    var email = $('#loginEmail').val();
+                    var password = $('#loginPassword').val();
+                    
+                    if (email && password) {
+                        alert('Connexion réussie pour: ' + email);
+                        $('#loginModal').modal('hide');
+                        $('#loginEmail, #loginPassword').val('');
+                        $('#rememberMe').prop('checked', false);
+                    } else {
+                        alert('Veuillez remplir tous les champs.');
+                    }
+                });
+
+                // Gestion de l'inscription
+                $('#registerBtn').click(function(e) {
+                    e.preventDefault();
+                    var name = $('#registerName').val();
+                    var email = $('#registerEmail').val();
+                    var password = $('#registerPassword').val();
+                    var confirmPassword = $('#confirmPassword').val();
+                    var agreeTerms = $('#agreeTerms').is(':checked');
+                    
+                    if (name && email && password && confirmPassword && agreeTerms) {
+                        if (password === confirmPassword) {
+                            alert('Compte créé avec succès pour: ' + name);
+                            $('#loginModal').modal('hide');
+                            $('#registerName, #registerEmail, #registerPassword, #confirmPassword').val('');
+                            $('#agreeTerms').prop('checked', false);
+                        } else {
+                            alert('Les mots de passe ne correspondent pas.');
+                        }
+                    } else {
+                        alert('Veuillez remplir tous les champs et accepter les conditions.');
+                    }
+                });
+
+                // Réinitialiser la modal à la fermeture
+                $('#loginModal').on('hidden.bs.modal', function () {
+                    $('#login-tab').tab('show');
+                    $('#loginEmail, #loginPassword').val('');
+                    $('#rememberMe').prop('checked', false);
+                    $('#registerName, #registerEmail, #registerPassword, #confirmPassword').val('');
+                    $('#agreeTerms').prop('checked', false);
+                });
+
+                // Gestion du formulaire de contact
+                $('#contactForm').submit(function(e) {
+                    e.preventDefault();
+                    
+                    var firstName = $('#firstName').val();
+                    var lastName = $('#lastName').val();
+                    var email = $('#email').val();
+                    var subject = $('#subject').val();
+                    var message = $('#message').val();
+                    var consent = $('#consent').is(':checked');
+                    
+                    if (firstName && lastName && email && subject && message && consent) {
+                        alert('Merci ' + firstName + ' ' + lastName + '! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.');
+                        
+                        // Réinitialiser le formulaire
+                        $('#contactForm')[0].reset();
+                    } else {
+                        alert('Veuillez remplir tous les champs obligatoires et accepter le traitement des données.');
+                    }
+                });
+            });
+        </script>
+
+    </body>
+</html>

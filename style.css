@@ -1,0 +1,170 @@
+/*
+* { border: 1px red dotted; }
+*/
+body{
+   
+background-image: url("../img/bg-body.png");
+padding: 60px 0px 0px 0px;
+    z-index:0;
+
+}
+.row-content {
+    margin: 0px auto;
+    padding: 15px 0px 15px 0px;
+    min-height: 400px; 
+}
+.navbar-dark {
+    background-color: #013e80;
+    color: #013e80;
+    padding:10px;
+}
+
+.nav-link,.navbar-brand {
+    color: #368dea !important;
+}
+.nav-link:hover{
+    color: rgb(368, 222, 234) !important;
+}
+.navbar-dark .fa-bars{
+    color:#368dea;
+
+}
+
+.navbar-dark .navbar-collapse{
+    margin:0px  0px 0px 0px;
+}
+.btn-sign-in{
+  background-color: aquamarine;  
+}
+.carousel {
+    background: #241b18;
+    margin: 0px auto;
+    border: 1px solid #ffffff; 
+}
+
+.mycard{
+    margin: 10px auto;
+    border: solid #87CEEB;
+    background-color: #87CEEB;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    
+  }
+
+.photo {
+    background-color:#87CEEB;
+   width: 100%;
+   height:250px;
+   ;
+}
+
+.bodycard {
+
+    background-color: #013e80;
+    color:#013e80;
+    opacity: 0.95;
+   
+}
+
+.card-title{
+    font-size:20px;
+    color: #368dea;
+    text-shadow: 1px 1px #368dea
+}
+
+.card-text{
+    color:#368dea;
+} 
+
+/* Styles pour la modal de login */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #013e80, #012a5c);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 15px 20px 0 20px;
+}
+
+.modal-header .nav-tabs {
+    border-bottom: none;
+    flex: 1;
+}
+
+.modal-header .nav-tabs .nav-link {
+    color: rgba(255,255,255,0.7);
+    border: none;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.modal-header .nav-tabs .nav-link.active {
+    color: white;
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 0.8;
+    font-size: 1.5rem;
+}
+
+.modal-header .close:hover {
+    color: white;
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 30px;
+    background-color: #f8f9fa;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #013e80;
+    box-shadow: 0 0 0 0.2rem rgba(1,62,128,0.25);
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    border-radius: 0 0 10px 10px;
+    padding: 20px 30px;
+}
+
+.btn-primary, .btn-success {
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATALOGUE - JULES FERRY CAR</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Styles spécifiques au catalogue */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(1,62,128,0.9), rgba(1,42,92,0.9)), url('./img/bgimages.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .filter-tabs {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin: -30px auto 50px;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .filter-tabs .nav-pills .nav-link {
+            color: #013e80;
+            border: 2px solid #013e80;
+            margin: 5px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-tabs .nav-pills .nav-link.active {
+            background-color: #013e80;
+            border-color: #013e80;
+        }
+        
+        .filter-tabs .nav-pills .nav-link:hover {
+            background-color: #013e80;
+            border-color: #013e80;
+            color: white;
+        }
+        
+        .vehicle-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            background: white;
+        }
+        
+        .vehicle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(1,62,128,0.2);
+        }
+        
+        .vehicle-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vehicle-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #013e80;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .vehicle-price {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .vehicle-info {
+            padding: 25px;
+        }
+        
+        .vehicle-title {
+            color: #013e80;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .vehicle-specs {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .spec-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .spec-item i {
+            color: #013e80;
+            margin-right: 5px;
+        }
+        
+        .btn-details {
+            background: #013e80;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn-details:hover {
+            background: #012a5c;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .stats-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #013e80;
+            margin-bottom: 10px;
+        }
+        
+        .loading-placeholder {
+            display: none;
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="fas fa-bars fa-lg"></span>
+            </button>
+            
+            <a class="navbar-brand" href="./catalogue.html"><span class="fas fa-trophy fa-lg"></span></a>
+            
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="./informations.html"><span class="fa fa-info fa-lg"></span> Informations</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./catalogue.html"><span class="fas fa-car fa-lg"></span> Catalogue</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+                <span class="navbar-text">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login
+                    </button>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrousel des voitures disponibles -->
+    <section class="carousel-section" style="background: linear-gradient(135deg, rgba(1,62,128,0.9), rgba(1,42,92,0.9)); padding: 100px 0 40px;">
+        <div class="container">
+            <h2 class="text-center text-white mb-4">Nos Véhicules Premium</h2>
+            <div id="carCarousel" class="carousel slide" data-ride="carousel" style="max-width:800px;margin:0 auto;">
+                <ol class="carousel-indicators">
+                    <li data-target="#carCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carCarousel" data-slide-to="1"></li>
+                    <li data-target="#carCarousel" data-slide-to="2"></li>
+                    <li data-target="#carCarousel" data-slide-to="3"></li>
+                    <li data-target="#carCarousel" data-slide-to="4"></li>
+                    <li data-target="#carCarousel" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./img/1.jpeg" class="d-block w-100" alt="Mercedes Classe S" style="height:400px;object-fit:cover;border-radius:15px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 style="background:rgba(0,0,0,0.8);padding:10px 20px;border-radius:10px;font-weight:bold;">Mercedes Classe S - €89,000</h5>
+                            <p style="background:rgba(0,0,0,0.6);padding:5px 15px;border-radius:5px;">Berline de luxe, confort exceptionnel</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/2.jpeg" class="d-block w-100" alt="BMW Série 7" style="height:400px;object-fit:cover;border-radius:15px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 style="background:rgba(0,0,0,0.8);padding:10px 20px;border-radius:10px;font-weight:bold;">BMW Série 7 - €75,500</h5>
+                            <p style="background:rgba(0,0,0,0.6);padding:5px 15px;border-radius:5px;">Technologie de pointe et élégance</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/3.jpeg" class="d-block w-100" alt="Porsche 911" style="height:400px;object-fit:cover;border-radius:15px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 style="background:rgba(0,0,0,0.8);padding:10px 20px;border-radius:10px;font-weight:bold;">Porsche 911 - €95,000</h5>
+                            <p style="background:rgba(0,0,0,0.6);padding:5px 15px;border-radius:5px;">Performance et plaisir de conduite</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/4.jpeg" class="d-block w-100" alt="Tesla Model S" style="height:400px;object-fit:cover;border-radius:15px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 style="background:rgba(0,0,0,0.8);padding:10px 20px;border-radius:10px;font-weight:bold;">Tesla Model S - €82,000</h5>
+                            <p style="background:rgba(0,0,0,0.6);padding:5px 15px;border-radius:5px;">Innovation électrique et autonomie</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/5.jpeg" class="d-block w-100" alt="Range Rover Evoque" style="height:400px;object-fit:cover;border-radius:15px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 style="background:rgba(0,0,0,0.8);padding:10px 20px;border-radius:10px;font-weight:bold;">Range Rover Evoque - €78,000</h5>
+                            <p style="background:rgba(0,0,0,0.6);padding:5px 15px;border-radius:5px;">Élégance et capacités tout-terrain</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/6.jpeg" class="d-block w-100" alt="Audi Q7" style="height:400px;object-fit:cover;border-radius:15px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 style="background:rgba(0,0,0,0.8);padding:10px 20px;border-radius:10px;font-weight:bold;">Audi Q7 - €69,500</h5>
+                            <p style="background:rgba(0,0,0,0.6);padding:5px 15px;border-radius:5px;">SUV familial premium et spacieux</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Précédent</span>
+                </a>
+                <a class="carousel-control-next" href="#carCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Suivant</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">
+                <i class="fas fa-car"></i> Jules Ferry Car
+            </h1>
+            <p class="hero-subtitle">Découvrez notre collection exclusive de véhicules premium</p>
+            <p>Excellence • Qualité • Innovation</p>
+        </div>
+    </section>
+
+    <!-- Filtres -->
+    <div class="container">
+        <div class="filter-tabs">
+            <ul class="nav nav-pills justify-content-center" id="vehicleFilters" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="all-tab" data-toggle="pill" href="#all" role="tab">
+                        <i class="fas fa-th-large"></i> Tous
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="luxury-tab" data-toggle="pill" href="#luxury" role="tab">
+                        <i class="fas fa-crown"></i> Luxe
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sport-tab" data-toggle="pill" href="#sport" role="tab">
+                        <i class="fas fa-tachometer-alt"></i> Sport
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="suv-tab" data-toggle="pill" href="#suv" role="tab">
+                        <i class="fas fa-mountain"></i> SUV
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="electric-tab" data-toggle="pill" href="#electric" role="tab">
+                        <i class="fas fa-leaf"></i> Électrique
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Catalogue des véhicules -->
+    <div class="container">
+        <div class="tab-content" id="vehicleContent">
+            
+            <!-- Tous les véhicules -->
+            <div class="tab-pane fade show active" id="all" role="tabpanel">
+                <div class="row" id="allVehicles">
+                    
+                    <!-- Véhicule 1 - Mercedes Classe S -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image" style="background-image: url('./img/1.jpeg');">
+                                <div class="vehicle-badge">Premium</div>
+                                <div class="vehicle-price">€89 000</div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3 class="vehicle-title">Mercedes Classe S</h3>
+                                <p class="text-muted">Berline de luxe, confort exceptionnel</p>
+                                <div class="vehicle-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-gas-pump"></i>
+                                        <span>Essence</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-road"></i>
+                                        <span>25 000 km</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>2022</span>
+                                    </div>
+                                </div>
+                                <button class="btn-details" onclick="showVehicleDetails('Mercedes Classe S', '89000')">
+                                    <i class="fas fa-eye"></i> Voir les détails
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Véhicule 2 - BMW Série 7 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image" style="background-image: url('./img/2.jpeg');">
+                                <div class="vehicle-badge">Luxe</div>
+                                <div class="vehicle-price">€75 500</div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3 class="vehicle-title">BMW Série 7</h3>
+                                <p class="text-muted">Technologie de pointe et élégance</p>
+                                <div class="vehicle-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-gas-pump"></i>
+                                        <span>Hybride</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-road"></i>
+                                        <span>18 500 km</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>2023</span>
+                                    </div>
+                                </div>
+                                <button class="btn-details" onclick="showVehicleDetails('BMW Série 7', '75500')">
+                                    <i class="fas fa-eye"></i> Voir les détails
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Véhicule 3 - Porsche 911 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image" style="background-image: url('./img/3.jpeg');">
+                                <div class="vehicle-badge">Sport</div>
+                                <div class="vehicle-price">€95 000</div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3 class="vehicle-title">Porsche 911</h3>
+                                <p class="text-muted">Performance et plaisir de conduite</p>
+                                <div class="vehicle-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-gas-pump"></i>
+                                        <span>Essence</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-road"></i>
+                                        <span>12 000 km</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>2023</span>
+                                    </div>
+                                </div>
+                                <button class="btn-details" onclick="showVehicleDetails('Porsche 911', '95000')">
+                                    <i class="fas fa-eye"></i> Voir les détails
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Véhicule 4 - Tesla Model S -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image" style="background-image: url('./img/4.jpeg');">
+                                <div class="vehicle-badge">Électrique</div>
+                                <div class="vehicle-price">€82 000</div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3 class="vehicle-title">Tesla Model S</h3>
+                                <p class="text-muted">Innovation électrique et autonomie</p>
+                                <div class="vehicle-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Électrique</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-road"></i>
+                                        <span>8 500 km</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>2024</span>
+                                    </div>
+                                </div>
+                                <button class="btn-details" onclick="showVehicleDetails('Tesla Model S', '82000')">
+                                    <i class="fas fa-eye"></i> Voir les détails
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Véhicule 5 - Range Rover -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image" style="background-image: url('./img/5.jpeg');">
+                                <div class="vehicle-badge">SUV</div>
+                                <div class="vehicle-price">€78 000</div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3 class="vehicle-title">Range Rover Evoque</h3>
+                                <p class="text-muted">Élégance et capacités tout-terrain</p>
+                                <div class="vehicle-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-gas-pump"></i>
+                                        <span>Diesel</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-road"></i>
+                                        <span>22 000 km</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>2022</span>
+                                    </div>
+                                </div>
+                                <button class="btn-details" onclick="showVehicleDetails('Range Rover Evoque', '78000')">
+                                    <i class="fas fa-eye"></i> Voir les détails
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Véhicule 6 - Audi Q7 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image" style="background-image: url('./img/6.jpeg');">
+                                <div class="vehicle-badge">Familial</div>
+                                <div class="vehicle-price">€69 500</div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3 class="vehicle-title">Audi Q7</h3>
+                                <p class="text-muted">SUV familial premium et spacieux</p>
+                                <div class="vehicle-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-gas-pump"></i>
+                                        <span>Hybride</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-road"></i>
+                                        <span>35 000 km</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>2021</span>
+                                    </div>
+                                </div>
+                                <button class="btn-details" onclick="showVehicleDetails('Audi Q7', '69500')">
+                                    <i class="fas fa-eye"></i> Voir les détails
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal de Login/Inscription -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-tabs" id="loginTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Créer un compte</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content" id="loginTabContent">
+                        <!-- Onglet Connexion -->
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="loginEmail">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="Entrez votre email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPassword">Mot de passe</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Onglet Inscription -->
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="registerName">Nom complet</label>
+                                    <input type="text" class="form-control" id="registerName" placeholder="Entrez votre nom complet" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerEmail">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="Entrez votre email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword">Mot de passe</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Créez un mot de passe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirmer le mot de passe</label>
+                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">J'accepte les conditions d'utilisation</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="tab-content w-100">
+                        <div class="tab-pane fade show active" id="loginFooter" role="tabpanel">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <button type="submit" class="btn btn-primary" id="loginBtn">Se connecter</button>
+                        </div>
+                        <div class="tab-pane fade" id="registerFooter" role="tabpanel">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <button type="submit" class="btn btn-success" id="registerBtn">Créer le compte</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Détails Véhicule -->
+    <div class="modal fade" id="vehicleModal" tabindex="-1" role="dialog" aria-labelledby="vehicleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #013e80; color: white;">
+                    <h5 class="modal-title" id="vehicleModalLabel">
+                        <i class="fas fa-car"></i> Détails du véhicule
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="vehicleDetails">
+                    <!-- Contenu dynamique injecté par JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn" style="background: #013e80; color: white;" onclick="requestInfo()">
+                        <i class="fas fa-envelope"></i> Demander des informations
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gestion des onglets de filtrage
+        $(document).ready(function() {
+            // Synchroniser les pieds de modal avec les onglets
+            $('#loginTab a').on('shown.bs.tab', function (e) {
+                var target = $(e.target).attr("href");
+                if (target === '#login') {
+                    $('#loginFooter').addClass('show active');
+                    $('#registerFooter').removeClass('show active');
+                } else if (target === '#register') {
+                    $('#registerFooter').addClass('show active');
+                    $('#loginFooter').removeClass('show active');
+                }
+            });
+
+            // Gestion de la connexion
+            $('#loginBtn').click(function(e) {
+                e.preventDefault();
+                var email = $('#loginEmail').val();
+                var password = $('#loginPassword').val();
+                
+                if (email && password) {
+                    alert('Connexion réussie pour: ' + email);
+                    $('#loginModal').modal('hide');
+                    $('#loginEmail, #loginPassword').val('');
+                    $('#rememberMe').prop('checked', false);
+                } else {
+                    alert('Veuillez remplir tous les champs.');
+                }
+            });
+
+            // Gestion de l'inscription
+            $('#registerBtn').click(function(e) {
+                e.preventDefault();
+                var name = $('#registerName').val();
+                var email = $('#registerEmail').val();
+                var password = $('#registerPassword').val();
+                var confirmPassword = $('#confirmPassword').val();
+                var agreeTerms = $('#agreeTerms').is(':checked');
+                
+                if (name && email && password && confirmPassword && agreeTerms) {
+                    if (password === confirmPassword) {
+                        alert('Compte créé avec succès pour: ' + name);
+                        $('#loginModal').modal('hide');
+                        $('#registerName, #registerEmail, #registerPassword, #confirmPassword').val('');
+                        $('#agreeTerms').prop('checked', false);
+                    } else {
+                        alert('Les mots de passe ne correspondent pas.');
+                    }
+                } else {
+                    alert('Veuillez remplir tous les champs et accepter les conditions.');
+                }
+            });
+
+            // Réinitialiser la modal à la fermeture
+            $('#loginModal').on('hidden.bs.modal', function () {
+                $('#login-tab').tab('show');
+                $('#loginEmail, #loginPassword').val('');
+                $('#rememberMe').prop('checked', false);
+                $('#registerName, #registerEmail, #registerPassword, #confirmPassword').val('');
+                $('#agreeTerms').prop('checked', false);
+            });
+        });
+
+        // Fonction pour afficher les détails d'un véhicule
+        function showVehicleDetails(vehicleName, price) {
+            var details = generateVehicleDetails(vehicleName, price);
+            $('#vehicleDetails').html(details);
+            $('#vehicleModal').modal('show');
+        }
+
+        // Générer les détails d'un véhicule
+        function generateVehicleDetails(name, price) {
+            // Choisir l'image selon le véhicule
+            var imageUrl;
+            if (name === 'BMW Série 7') {
+                imageUrl = './img/2.jpeg';
+            } else if (name === 'Porsche 911') {
+                imageUrl = './img/3.jpeg';
+            } else if (name === 'Tesla Model S') {
+                imageUrl = './img/4.jpeg';
+            } else if (name === 'Range Rover Evoque') {
+                imageUrl = './img/5.jpeg';
+            } else if (name === 'Audi Q7') {
+                imageUrl = './img/6.jpeg';
+            } else {
+                imageUrl = './img/1.jpeg';
+            }
+            
+            return `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="${imageUrl}" class="img-fluid rounded" alt="${name}">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 style="color: #013e80;">${name}</h4>
+                        <h5 class="text-success">€${parseInt(price).toLocaleString()}</h5>
+                        
+                        <div class="mt-3">
+                            <h6><strong>Caractéristiques :</strong></h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Garantie constructeur</li>
+                                <li><i class="fas fa-check text-success"></i> Entretien régulier</li>
+                                <li><i class="fas fa-check text-success"></i> Contrôle technique OK</li>
+                                <li><i class="fas fa-check text-success"></i> Financement disponible</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <h6><strong>Équipements :</strong></h6>
+                            <span class="badge badge-primary mr-1">GPS</span>
+                            <span class="badge badge-primary mr-1">Climatisation</span>
+                            <span class="badge badge-primary mr-1">Régulateur</span>
+                            <span class="badge badge-primary mr-1">Bluetooth</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h6><strong>Description :</strong></h6>
+                        <p>Ce ${name} est en excellent état, avec un historique d'entretien complet. 
+                        Véhicule non fumeur, premier propriétaire. Idéal pour les trajets quotidiens 
+                        comme pour les longs voyages.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Demander des informations
+        function requestInfo() {
+            alert('Votre demande d\'informations a été envoyée ! Nous vous contacterons dans les plus brefs délais.');
+            $('#vehicleModal').modal('hide');
+        }
+
+        // Animation au scroll
+        window.addEventListener('scroll', function() {
+            var elements = document.querySelectorAll('.vehicle-card');
+            elements.forEach(function(element) {
+                var elementTop = element.getBoundingClientRect().top;
+                var elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚗 Catalogue Jules Ferry Car chargé !');
+        });
+    </script>
+
+</body>
+</html>

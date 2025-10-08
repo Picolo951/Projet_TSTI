@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation - Jules Ferry Car</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #013e80;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .test-links {
+            display: grid;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .test-link {
+            display: block;
+            padding: 15px 20px;
+            background: #013e80;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .test-link:hover {
+            background: #012a5c;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .primary-link {
+            background: #28a745;
+            font-size: 1.2em;
+            padding: 20px;
+        }
+        
+        .primary-link:hover {
+            background: #218838;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 Jules Ferry Car</h1>
+            <p>Test de Navigation - Diagnostic</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>🚗 Accès Direct au Catalogue</h3>
+            <p><strong>Nouveau :</strong> Le site démarre maintenant automatiquement sur le catalogue !</p>
+        </div>
+        
+        <div class="test-links">
+            <a href="./catalogue.html" class="test-link primary-link">
+                🚗 CATALOGUE (Page Principale)
+            </a>
+            
+            <a href="./main.html" class="test-link">
+                🏠 Ancienne Page d'Accueil
+            </a>
+            
+            <a href="./informations.html" class="test-link">
+                ℹ️ Informations
+            </a>
+            
+            <a href="./contact.html" class="test-link">
+                📞 Contact
+            </a>
+        </div>
+        
+        <div class="info-box">
+            <h4>🔧 Comment ça marche maintenant :</h4>
+            <ol>
+                <li><strong>index.html</strong> → Redirige automatiquement vers le catalogue</li>
+                <li><strong>catalogue.html</strong> → Page principale avec tous les véhicules</li>
+                <li><strong>Navigation</strong> → Tous les liens fonctionnent entre les pages</li>
+            </ol>
+        </div>
+        
+        <div class="info-box">
+            <h4>📝 Instructions :</h4>
+            <p>Pour ouvrir votre site, utilisez maintenant <strong>index.html</strong> comme page de démarrage.</p>
+            <p>Le catalogue s'ouvrira automatiquement en 2 secondes, ou cliquez pour y accéder immédiatement.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Log pour le débogage
+        console.log('📍 Répertoire actuel:', window.location.href);
+        console.log('🔗 Test des liens de navigation');
+        
+        // Vérifier que tous les fichiers sont accessibles
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.test-link');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('🖱️ Clic sur:', this.href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

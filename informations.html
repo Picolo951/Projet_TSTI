@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--------TITRE -------------------------->
+        <title>INFORMATIONS - JULES FERRY CAR</title>
+        <!------LINK CSS-------------------------->
+        <link rel="stylesheet" href="./style.css">
+        <!-------------------FONT AWSOME CDN ---------------------------------------->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-------------------BOOTSTRAP 4 CSS------------------------------------------------>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!----------Viewport controle de mise en page sur navigateur mobile --------->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!----CDN Javascript JQUERY--------------------------------------------------->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <!---------------------------BOOTSTRAP JAVASCRIPT ------------------->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <!---CDN Javascript poppser -------------------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!---nav de bootstrap/navbar-dark/------------------------------------------------------------------------------->
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="fas fa-bars fa-lg"></span>
+                </button>
+                
+                <a class="navbar-brand" href="./main.html"><span class="fas fa-trophy fa-lg"></span></a>
+                
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" href="./informations.html"><span class="fa fa-info fa-lg"></span> Informations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./catalogue.html"><span class="fas fa-car fa-lg"></span> Catalogue</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                    </ul>
+                    <span class="navbar-text">
+                        <button type="button" class="btn btn btn-success" data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login</button>
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenu principal des informations -->
+        <div class="container" style="margin-top: 80px;">
+            
+            <!-- En-tête de la page informations -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4" style="color: #013e80; margin-bottom: 30px;">
+                        <i class="fas fa-info-circle"></i> À propos de nous
+                    </h1>
+                    <p class="lead" style="color: #013e80;">Découvrez qui nous sommes et notre passion pour l'excellence</p>
+                </div>
+            </div>
+
+            <!-- Section Histoire -->
+            <div class="row row-content">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #013e80; color: white;">
+                            <h3><i class="fas fa-history"></i> Notre Histoire</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <p class="lead">Depuis 2010, <strong>Jules Ferry Car</strong> s'est imposé comme une référence dans l'industrie automobile de luxe.</p>
+                                    <p>Notre entreprise familiale a débuté avec une vision simple mais ambitieuse : offrir à nos clients les véhicules les plus exceptionnels du marché, accompagnés d'un service personnalisé inégalé.</p>
+                                    
+                                    <h5 style="color: #013e80; margin-top: 20px;"><i class="fas fa-road"></i> Nos étapes clés :</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check" style="color: #013e80;"></i> <strong>2010</strong> : Création de l'entreprise avec 5 véhicules</li>
+                                        <li><i class="fas fa-check" style="color: #013e80;"></i> <strong>2015</strong> : Expansion avec 50 véhicules en stock</li>
+                                        <li><i class="fas fa-check" style="color: #013e80;"></i> <strong>2018</strong> : Ouverture du showroom parisien</li>
+                                        <li><i class="fas fa-check" style="color: #013e80;"></i> <strong>2020</strong> : Lancement de la gamme électrique</li>
+                                        <li><i class="fas fa-check" style="color: #013e80;"></i> <strong>2023</strong> : Plus de 1000 clients satisfaits</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="./jf.jpg" class="img-fluid rounded" alt="Notre showroom" style="max-height: 300px; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Valeurs -->
+            <div class="row row-content">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-medal fa-3x" style="color: #013e80; margin-bottom: 20px;"></i>
+                            <h4 style="color: #013e80;">Excellence</h4>
+                            <p>Nous sélectionnons rigoureusement chaque véhicule pour garantir la plus haute qualité à nos clients.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-handshake fa-3x" style="color: #013e80; margin-bottom: 20px;"></i>
+                            <h4 style="color: #013e80;">Confiance</h4>
+                            <p>Transparence totale dans nos transactions et accompagnement personnalisé pour chaque client.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-leaf fa-3x" style="color: #013e80; margin-bottom: 20px;"></i>
+                            <h4 style="color: #013e80;">Durabilité</h4>
+                            <p>Engagement vers un avenir plus vert avec notre gamme croissante de véhicules électriques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Équipe -->
+            <div class="row row-content">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #013e80; color: white;">
+                            <h3><i class="fas fa-users"></i> Notre Équipe</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="team-member">
+                                        <div class="avatar" style="width: 120px; height: 120px; background-color: #013e80; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-user fa-3x" style="color: white;"></i>
+                                        </div>
+                                        <h5 style="color: #013e80;">Diogo De mesquita</h5>
+                                        <p class="text-muted">Directeur Général</p>
+                                        <p>15 ans d'expérience dans l'automobile de luxe</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="team-member">
+                                        <div class="avatar" style="width: 120px; height: 120px; background-color: #013e80; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-user fa-3x" style="color: white;"></i>
+                                        </div>
+                                        <h5 style="color: #013e80;">Amine Amaouche</h5>
+                                        <p class="text-muted">Responsable Commerciale</p>
+                                        <p>Experte en conseil personnalisé et négociation</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="team-member">
+                                        <div class="avatar" style="width: 120px; height: 120px; background-color: #013e80; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-user fa-3x" style="color: white;"></i>
+                                        </div>
+                                        <h5 style="color: #013e80;">Matéo Wembe</h5>
+                                        <p class="text-muted">Chef Mécanicien</p>
+                                        <p>Spécialiste de la maintenance et de l'expertise technique</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Services -->
+            <div class="row row-content">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #013e80; color: white;">
+                            <h3><i class="fas fa-cogs"></i> Nos Services</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 style="color: #013e80;"><i class="fas fa-search"></i> Recherche Personnalisée</h5>
+                                    <p>Notre équipe recherche le véhicule parfait selon vos critères spécifiques.</p>
+                                    
+                                    <h5 style="color: #013e80;"><i class="fas fa-wrench"></i> Maintenance Premium</h5>
+                                    <p>Service après-vente complet avec des techniciens certifiés.</p>
+                                    
+                                    <h5 style="color: #013e80;"><i class="fas fa-shield-alt"></i> Garantie Étendue</h5>
+                                    <p>Protection complète jusqu'à 3 ans sur tous nos véhicules.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 style="color: #013e80;"><i class="fas fa-credit-card"></i> Financement Sur Mesure</h5>
+                                    <p>Solutions de financement adaptées à votre budget et vos besoins.</p>
+                                    
+                                    <h5 style="color: #013e80;"><i class="fas fa-truck"></i> Livraison à Domicile</h5>
+                                    <p>Service de livraison gratuit dans un rayon de 100km.</p>
+                                    
+                                    <h5 style="color: #013e80;"><i class="fas fa-exchange-alt"></i> Reprise de Véhicule</h5>
+                                    <p>Évaluation gratuite et reprise de votre véhicule actuel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Certifications -->
+            <div class="row row-content">
+                <div class="col-12">
+                    <div class="card" style="background-color: #f8f9fa;">
+                        <div class="card-body text-center">
+                            <h3 style="color: #013e80; margin-bottom: 30px;"><i class="fas fa-certificate"></i> Nos Certifications</h3>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <i class="fas fa-award fa-2x" style="color: #013e80; margin-bottom: 10px;"></i>
+                                    <p><strong>ISO 9001</strong><br>Qualité</p>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <i class="fas fa-leaf fa-2x" style="color: #013e80; margin-bottom: 10px;"></i>
+                                    <p><strong>ISO 14001</strong><br>Environnement</p>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <i class="fas fa-shield-alt fa-2x" style="color: #013e80; margin-bottom: 10px;"></i>
+                                    <p><strong>Agréé Préfecture</strong><br>Sécurité</p>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <i class="fas fa-star fa-2x" style="color: #013e80; margin-bottom: 10px;"></i>
+                                    <p><strong>5 Étoiles</strong><br>Satisfaction Client</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Login/Inscription -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <ul class="nav nav-tabs" id="loginTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Se connecter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Créer un compte</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="tab-content" id="loginTabContent">
+                            <!-- Onglet Connexion -->
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="loginEmail">Email</label>
+                                        <input type="email" class="form-control" id="loginEmail" placeholder="Entrez votre email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Mot de passe</label>
+                                        <input type="password" class="form-control" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Onglet Inscription -->
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="registerName">Nom complet</label>
+                                        <input type="text" class="form-control" id="registerName" placeholder="Entrez votre nom complet" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerEmail">Email</label>
+                                        <input type="email" class="form-control" id="registerEmail" placeholder="Entrez votre email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerPassword">Mot de passe</label>
+                                        <input type="password" class="form-control" id="registerPassword" placeholder="Créez un mot de passe" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmPassword">Confirmer le mot de passe</label>
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                                        <label class="form-check-label" for="agreeTerms">J'accepte les conditions d'utilisation</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="tab-content w-100">
+                            <div class="tab-pane fade show active" id="loginFooter" role="tabpanel">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-primary" id="loginBtn">Se connecter</button>
+                            </div>
+                            <div class="tab-pane fade" id="registerFooter" role="tabpanel">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-success" id="registerBtn">Créer le compte</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Script pour gérer les onglets et les fonctionnalités de la modal
+            $(document).ready(function() {
+                // Synchroniser les pieds de modal avec les onglets
+                $('#loginTab a').on('shown.bs.tab', function (e) {
+                    var target = $(e.target).attr("href");
+                    if (target === '#login') {
+                        $('#loginFooter').addClass('show active');
+                        $('#registerFooter').removeClass('show active');
+                    } else if (target === '#register') {
+                        $('#registerFooter').addClass('show active');
+                        $('#loginFooter').removeClass('show active');
+                    }
+                });
+
+                // Gestion de la connexion
+                $('#loginBtn').click(function(e) {
+                    e.preventDefault();
+                    var email = $('#loginEmail').val();
+                    var password = $('#loginPassword').val();
+                    
+                    if (email && password) {
+                        alert('Connexion réussie pour: ' + email);
+                        $('#loginModal').modal('hide');
+                        $('#loginEmail, #loginPassword').val('');
+                        $('#rememberMe').prop('checked', false);
+                    } else {
+                        alert('Veuillez remplir tous les champs.');
+                    }
+                });
+
+                // Gestion de l'inscription
+                $('#registerBtn').click(function(e) {
+                    e.preventDefault();
+                    var name = $('#registerName').val();
+                    var email = $('#registerEmail').val();
+                    var password = $('#registerPassword').val();
+                    var confirmPassword = $('#confirmPassword').val();
+                    var agreeTerms = $('#agreeTerms').is(':checked');
+                    
+                    if (name && email && password && confirmPassword && agreeTerms) {
+                        if (password === confirmPassword) {
+                            alert('Compte créé avec succès pour: ' + name);
+                            $('#loginModal').modal('hide');
+                            $('#registerName, #registerEmail, #registerPassword, #confirmPassword').val('');
+                            $('#agreeTerms').prop('checked', false);
+                        } else {
+                            alert('Les mots de passe ne correspondent pas.');
+                        }
+                    } else {
+                        alert('Veuillez remplir tous les champs et accepter les conditions.');
+                    }
+                });
+
+                // Réinitialiser la modal à la fermeture
+                $('#loginModal').on('hidden.bs.modal', function () {
+                    $('#login-tab').tab('show');
+                    $('#loginEmail, #loginPassword').val('');
+                    $('#rememberMe').prop('checked', false);
+                    $('#registerName, #registerEmail, #registerPassword, #confirmPassword').val('');
+                    $('#agreeTerms').prop('checked', false);
+                });
+            });
+        </script>
+
+    </body>
+</html>
