@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jules Ferry Car - Redirection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #013e80 0%, #012a5c 100%);
+            color: white;
+        }
+        
+        .redirect-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .loading {
+            margin: 30px 0;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: #013e80;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo">🚗</div>
+        <h1>Jules Ferry Car</h1>
+        <p>Redirection vers le catalogue...</p>
+        <div class="loading">
+            <div class="spinner"></div>
+        </div>
+        <a href="./catalogue.html" class="btn">Accéder immédiatement</a>
+    </div>
+    
+    <script>
+        // Redirection automatique après 2 secondes
+        setTimeout(function() {
+            window.location.href = './catalogue.html';
+        }, 2000);
+    </script>
+</body>
+</html>
